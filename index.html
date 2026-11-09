@@ -746,16 +746,15 @@ function sendWhatsApp() {
         ...(late ? [`🕔 *Dopo le ${CUTOFF_HOUR}:00 — da elaborare domani*`, ''] : []),
         `👤 *Cliente:* ${cog}`,
         `📍 *Indirizzo:* ${ind}`,
-        `🚚 *Zona:* ${zn}`
+        `🚚 *Zona:* ${zn}`,
         bar,
         ...lines,
         bar,
+        `🧾 Prodotti: €${fmt(sub)}`,
         `🚛  Consegna: €${fmt(deliv)}`,
         bar,
         `💰 *TOTALE DA PAGARE: € ${fmt(sub + deliv)}*`,
         
-    ].join('\n');
-
     window.open(`https://wa.me/${MY_NUMBER}?text=${encodeURIComponent(order)}`, '_blank');
 }
 
