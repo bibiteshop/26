@@ -241,7 +241,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 <div id="xmasBanner" class="xmas-overlay" role="dialog" aria-modal="true" aria-labelledby="xmasTitle" onclick="if(event.target===this)closeXmasBanner()">
     <div class="xmas-card">
         <button class="xmas-close" aria-label="Chiudi" onclick="closeXmasBanner()">✕</button>
-        <div class="xmas-emoji" aria-hidden="true">🎄🎁</div>
+        <div class="xmas-emoji" aria-hidden="true"></div>
         <span class="xmas-kicker">Cartellone di Natale</span>
         <h2 id="xmasTitle" class="xmas-title">Prenota il tuo numero di Natale!</h2>
         <p class="xmas-text">Scegli il tuo numero dal tabellone e partecipa all’estrazione: in palio uno <strong>Samsung Galaxy A17 5G</strong>.</p>
@@ -523,7 +523,7 @@ function render() {
     document.getElementById('product-list').innerHTML = html;
 }
 
-const MIN_ITEMS = 3;     // minimo di prodotti (pezzi) per ordine
+const MIN_ITEMS = 2;     // minimo di prodotti (pezzi) per ordine
 const CUTOFF_HOUR = 17;  // dopo quest'ora l'ordine viene elaborato il giorno dopo
 
 // Ora attuale a Roma, indipendente dal fuso del telefono del cliente
@@ -754,7 +754,7 @@ function sendWhatsApp() {
         `🚛  Consegna: €${fmt(deliv)}`,
         bar,
         `💰 *TOTALE DA PAGARE: € ${fmt(sub + deliv)}*`,
-        `_🕐 Inviato il ${when}_`
+        
     ].join('\n');
 
     window.open(`https://wa.me/${MY_NUMBER}?text=${encodeURIComponent(order)}`, '_blank');
