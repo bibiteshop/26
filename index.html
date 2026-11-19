@@ -1,46 +1,49 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Bibiteshop</title>
-    <meta name="theme-color" content="#2347FF">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
-    <style>
-:root{--cobalt:#2347FF;--cobalt-deep:#1B38D6;--lemon:#FFE14D;--ink:#0D1230;--paper:#F3F5FF;--tint:#EEF1FF;--line:#E4E8F8;--muted:#5B6390;--green:#25D366;--green-deep:#0A7A3A;--font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;--font-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--header-h:calc(76px + env(safe-area-inset-top,0px));--shadow:0 1px 2px rgba(13,18,48,.05),0 14px 32px -16px rgba(35,71,255,.35)}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-::selection{background:var(--lemon);color:var(--ink)}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.4 var(--font-body);padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));overflow-x:hidden}
-.container{width:100%;max-width:1200px;margin:0 auto;padding:16px}
-button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+<!DOCTYPE html> <!-- Dichiara al browser che questo è un documento HTML5 moderno -->
+<html lang="it"> <!-- Radice della pagina HTML; lang="it" indica che la lingua è l'italiano -->
+<head> <!-- Intestazione tecnica: configura la pagina e carica stili e font -->
+    <meta charset="UTF-8"> <!-- Codifica caratteri per accenti, simboli (€) ed emoji -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> <!-- Adatta layout e aree sicure allo schermo -->
+    <title>Bibiteshop</title> <!-- Titolo della scheda del browser -->
+    <meta name="theme-color" content="#2347FF"> <!-- Colora la barra del browser sui dispositivi supportati -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnessione verso Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnessione per i file dei caratteri -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Figtree:wght@400..700&display=swap" rel="stylesheet"> <!-- Carica i font usati nel CSS -->
+    <style> /* Inizio foglio di stile CSS */
+:root{--cobalt:#2347FF;--cobalt-deep:#1B38D6;--lemon:#FFE14D;--ink:#0D1230;--paper:#F3F5FF;--tint:#EEF1FF;--line:#E4E8F8;--muted:#5B6390;--green:#25D366;--green-deep:#0A7A3A;--font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;--font-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--header-h:calc(76px + env(safe-area-inset-top,0px));--shadow:0 1px 2px rgba(13,18,48,.05),0 14px 32px -16px rgba(35,71,255,.35)} /* Variabili CSS globali (colori, font, altezza header, ombra) */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent} /* Include bordi e padding nelle dimensioni; rimuove il flash grigio al tocco */
+::selection{background:var(--lemon);color:var(--ink)} /* Stile del testo evidenziato con cursore/dito */
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.4 var(--font-body);padding-bottom:calc(100px + env(safe-area-inset-bottom,0px));overflow-x:hidden} /* Sfondo, font base e spazio inferiore per la barra fissa */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:16px} /* Contenitore centrale principale */
+button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px} /* Evidenziazione visibile per navigazione da tastiera */
 
-/* Header */
+/* Header */ /* Barra superiore fissa */
 .header-sticky{position:sticky;top:0;z-index:100;height:var(--header-h);padding:env(safe-area-inset-top,0px) 16px 0;display:flex;align-items:center;background:var(--cobalt);box-shadow:0 10px 24px -14px rgba(13,18,48,.7)}
 .header-top{width:100%;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo-container{display:flex;align-items:center;gap:12px;flex:1 1 auto;min-width:0}
-.logo-electric-wrapper{display:block;flex-shrink:0;padding:3px;border-radius:17px;background:var(--lemon)}
-.main-logo{display:block;height:50px;width:auto;border-radius:14px;background:#fff;padding:3px}
+.logo-electric-wrapper{display:block;flex-shrink:0;padding:3px;border-radius:17px;background:var(--lemon)} /* Cornice gialla attorno al logo */
+.main-logo{display:block;height:50px;width:auto;border-radius:14px;background:#fff;padding:3px} /* Immagine logo */
 .header-title{margin:0;font-family:var(--font-display);font-weight:800;font-size:clamp(.95rem,4.2vw,1.12rem);line-height:1.02;letter-spacing:-.01em;color:#fff;text-wrap:balance}
-.badge-live::before{content:"";display:inline-block;width:.55em;height:.55em;margin-right:.4em;vertical-align:.05em;border-radius:50%;background:var(--green);animation:ping 2.2s ease-out infinite}
+.badge-live::before{content:"";display:inline-block;width:.55em;height:.55em;margin-right:.4em;vertical-align:.05em;border-radius:50%;background:var(--green);animation:ping 2.2s ease-out infinite} /* Pallino verde animato */
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}70%,100%{box-shadow:0 0 0 .55em rgba(37,211,102,0)}}
 .search-container{flex:0 1 150px;min-width:120px}
-#productSearch{width:100%;padding:12px 16px;border:0;border-radius:999px;background:#fff;color:var(--ink);font:500 1rem var(--font-body);outline:none;transition:box-shadow .2s}
+#productSearch{width:100%;padding:12px 16px;border:0;border-radius:999px;background:#fff;color:var(--ink);font:500 1rem var(--font-body);outline:none;transition:box-shadow .2s} /* Casella di ricerca */
 #productSearch::placeholder{color:#6A719B}
 #productSearch:focus{box-shadow:0 0 0 4px rgba(255,225,77,.75)}
 
-/* Avvisi */
+/* Avvisi */ /* Banner informativi */
 .scrolling-banner{background:#FFF6C2;border:2px solid var(--lemon);color:var(--ink);padding:12px 14px;border-radius:16px;margin-bottom:16px;font-weight:700;font-size:.95rem;text-align:center}
 .bounce-text{display:inline-block}
 .late-notice{display:none;background:#E4E9FF;border:1px solid rgba(35,71,255,.25);color:#1730B8;padding:12px 14px;border-radius:16px;margin-bottom:16px;font-weight:600;font-size:.95rem;text-align:center}
 .late-notice.show{display:block}
 
-/* Dati consegna */
+/* Dati consegna */ /* Zona e card dati cliente */
 .user-fields{display:none;grid-template-columns:1fr;gap:12px;padding:20px;margin-bottom:20px;background:#fff;border-radius:22px;box-shadow:var(--shadow)}
 .user-fields strong{grid-column:1/-1;display:block;font:800 1.2rem/1.2 var(--font-display);letter-spacing:-.01em}
 .user-fields input,#zona{width:100%;padding:14px 16px;border:2px solid transparent;border-radius:14px;background-color:var(--tint);color:var(--ink);font:500 1rem var(--font-body);outline:none;transition:border-color .2s,background-color .2s,box-shadow .2s}
 .user-fields input::placeholder{color:#6A719B}
+.date-field-group{grid-column:1/-1;display:flex;flex-direction:column;gap:6px} /* Gruppo per etichetta e selettore data */
+.date-field-group label{font:700 .88rem/1.2 var(--font-body);color:var(--muted);padding-left:4px}
+.user-fields input[type="date"]{min-height:50px;cursor:pointer}
 #zona{appearance:none;-webkit-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1 1.5l6 6 6-6' stroke='%232347FF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
 #zona option{background:#fff;color:var(--ink)}
 #zona{display:block;margin-bottom:20px;padding:17px 48px 17px 18px;border-radius:18px;background-color:#fff;box-shadow:var(--shadow);font-weight:700}
@@ -48,7 +51,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 @keyframes fieldsIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
 .user-fields input:focus,#zona:focus{border-color:var(--cobalt);background-color:#fff;box-shadow:0 0 0 4px rgba(35,71,255,.14)}
 
-/* Categorie: una tinta per ciascuna */
+/* Categorie: una tinta per ciascuna */ /* Sezioni espandibili dei prodotti */
 .cat-container{--cat:#2347FF;--cat-rgb:35,71,255;margin-bottom:16px;border-radius:22px;background:#fff;box-shadow:var(--shadow)}
 .cat-header{position:sticky;top:var(--header-h);z-index:10;min-height:104px;padding:18px 18px 18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;user-select:none;color:#fff;font-family:var(--font-display);font-weight:800;font-size:1.55rem;line-height:1.02;letter-spacing:-.025em;background-color:var(--cat);background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:22px;transition:border-radius .35s ease}
 .cat-header.active{border-radius:22px 22px 0 0}
@@ -68,7 +71,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 .cat-inner{min-height:0;opacity:0;transform:translateY(-8px);transition:opacity .3s ease .1s,transform .3s ease .1s}
 .cat-content.active .cat-inner{opacity:1;transform:none}
 
-/* Prodotto */
+/* Prodotto */ /* Singola riga prodotto */
 .item{display:grid;grid-template-columns:60px minmax(0,1fr) auto;grid-template-areas:"img name qty" "img price qty";column-gap:12px;align-items:center;padding:12px 8px;border-bottom:1px solid var(--line);border-radius:14px;transition:background .2s}
 .item:last-child{border-bottom:0}
 .item-info{display:contents}
@@ -91,7 +94,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 @media (hover:hover){.item:hover{background:#F7F8FF}.item.selected:hover{background:rgba(37,211,102,.16)}.prod-img:hover{border-color:var(--cobalt)}}
 .no-results{display:none;padding:40px;text-align:center;color:var(--muted);font-size:1.05rem}
 
-/* Anteprima carrello */
+/* Anteprima carrello */ /* Riepilogo carrello a comparsa */
 .preview-pane{display:none;position:fixed;bottom:calc(92px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:calc(100% - 28px);max-width:600px;max-height:55vh;overflow-y:auto;padding:20px;background:#fff;border-radius:24px;box-shadow:0 30px 70px -20px rgba(13,18,48,.55),0 0 0 1px var(--line);z-index:102;animation:paneSlideUp .3s ease}
 @keyframes paneSlideUp{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
 .preview-pane h4{margin:0 0 12px;padding-bottom:12px;border-bottom:2px solid var(--line);font:800 1.25rem/1.2 var(--font-display);letter-spacing:-.01em}
@@ -103,14 +106,14 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 .preview-warn{margin-top:12px;padding:10px 12px;border-radius:12px;background:#FFF6C2;color:#6B3F00;font-weight:600}
 .btn-clear{width:100%;margin-top:14px;padding:12px;border:0;border-radius:14px;background:#FFF0F1;color:#C4182D;font:700 .98rem var(--font-body);cursor:pointer}
 
-/* Barra in basso */
+/* Barra in basso */ /* Footer fisso */
 .footer{position:fixed;bottom:0;left:0;width:100%;display:flex;justify-content:center;align-items:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);box-shadow:0 -14px 30px -18px rgba(13,18,48,.3);z-index:101}
 .footer-btns{display:flex;gap:10px;width:100%;max-width:600px}
 .btn-preview{flex:1;padding:15px 12px;border:0;border-radius:16px;background:var(--tint);color:var(--cobalt-deep);font:700 .98rem var(--font-body);cursor:pointer}
 .btn-order{flex:2;display:flex;align-items:center;justify-content:center;padding:15px 12px;border:0;border-radius:16px;background:var(--green);color:#04210F;font:800 1.05rem/1.2 var(--font-display);cursor:pointer;box-shadow:0 12px 24px -10px rgba(37,211,102,.9);transition:transform .15s}
 .btn-order:active{transform:scale(.98)}
 
-/* Foto a schermo intero */
+/* Foto a schermo intero */ /* Lightbox immagine */
 .lightbox{display:none;position:fixed;inset:0;z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));background:rgba(13,18,48,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .lightbox.open{display:flex}
 .lightbox img{max-width:100%;max-height:75vh;object-fit:contain;padding:10px;background:#fff;border:3px solid var(--lemon);border-radius:20px}
@@ -131,7 +134,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 .cat-inner{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
 }
 
-/* Tinta di ogni categoria + sfondi animati */
+/* Tinta di ogni categoria + sfondi animati */ /* Colore e GIF di sfondo per ciascuna categoria */
 .cat-container:nth-of-type(1){--cat:#2347FF;--cat-rgb:35,71,255}
 .cat-container:nth-of-type(2){--cat:#0077C2;--cat-rgb:0,119,194}
 .cat-container:nth-of-type(3){--cat:#00807A;--cat-rgb:0,128,122}
@@ -151,7 +154,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 .cat-container:nth-of-type(8) .cat-header { background-image: url('https://prodigits.co.uk/pthumbs/screensavers/down/misc/orange_widVdVmG.gif') !important; }
 .cat-container:nth-of-type(9) .cat-header { background-image: url('https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyYXJvM2JiaHNtbXB0bHIyc3g1Z2xweHcyczBtYnptcThrN3ZkcDQwYSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hsbP4tFcYoR5LB0k39/source.gif') !important; }
     
-/* Banner d'apertura: Numero di Natale */
+/* Banner d'apertura: Numero di Natale */ /* Modale promozionale iniziale */
 .xmas-overlay{display:none;position:fixed;inset:0;z-index:300;align-items:center;justify-content:center;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));background:rgba(13,18,48,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .xmas-overlay.open{display:flex;animation:xmasFade .3s ease-out}
 .xmas-card{position:relative;width:100%;max-width:400px;max-height:100%;overflow-y:auto;padding:30px 22px 22px;border-radius:28px;background:#fff;text-align:center;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);animation:xmasPop .45s cubic-bezier(.16,1,.3,1)}
@@ -170,32 +173,32 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 .xmas-later{margin-top:6px;padding:12px;border:0;background:none;color:var(--muted);font:600 .95rem var(--font-body);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 @keyframes xmasFade{from{opacity:0}to{opacity:1}}
 @keyframes xmasPop{from{opacity:0;transform:translateY(24px) scale(.96)}to{opacity:1;transform:none}}
-</style>
-</head>
-<body>
+    </style> <!-- Fine foglio di stile CSS -->
+</head> <!-- Fine intestazione tecnica -->
+<body> <!-- Inizio corpo visibile della pagina HTML -->
 
-<div class="header-sticky">
+<div class="header-sticky"> <!-- Barra superiore fissa -->
     <div class="header-top">
         <div class="logo-container">
             <div class="logo-electric-wrapper">
-                <img src="https://dl.dropboxusercontent.com/scl/fi/ovkjoonga5w95u2y30i36/logo.png?rlkey=v1re74ojki06d1itnfmz3oeei&st=gollqylm&e=1&dl=0" alt="Logo" class="main-logo">
+                <img src="https://dl.dropboxusercontent.com/scl/fi/ovkjoonga5w95u2y30i36/logo.png?rlkey=v1re74ojki06d1itnfmz3oeei&st=gollqylm&e=1&dl=0" alt="Logo" class="main-logo"> <!-- Logo del negozio -->
             </div>
-            <div class="header-title"> <span class="badge-live">Bibite a Domicilio Online</span></div>
+            <div class="header-title"> <span class="badge-live">Bibite a Domicilio Online</span></div> <!-- Titolo con pallino verde -->
         </div>
         <div class="search-container">
-            <input type="text" id="productSearch" placeholder="🔍 Cerca..." oninput="filterProducts()">
+            <input type="text" id="productSearch" placeholder="🔍 Cerca..." oninput="filterProducts()"> <!-- Filtra i prodotti mentre scrivi -->
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container"> <!-- Contenitore principale -->
     <div class="scrolling-banner">
-        <span class="bounce-text">Consegne Esclusivamente Con Ascensore</span>
+        <span class="bounce-text">Consegne Esclusivamente Con Ascensore</span> <!-- Avviso consegna -->
     </div>
 
-    <div id="lateNotice" class="late-notice"></div>
+    <div id="lateNotice" class="late-notice"></div> <!-- Avviso automatico dopo le 17:00 -->
 
-        <select id="zona" onchange="updateTotal(); showUserFields()" aria-label="Zona di consegna">
+        <select id="zona" onchange="updateTotal(); showUserFields()" aria-label="Zona di consegna"> <!-- Selezione zona e costo spedizione -->
             <option value="0" disabled selected>Scegli la zona di consegna</option>
             <option value="2.50" data-zn="Soccavo">Soccavo (+€2.50)</option>
             <option value="3.50" data-zn="Pianura">Pianura (+€3.50)</option>
@@ -204,41 +207,45 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
             <option value="4.00" data-zn="Posillipo">Posillipo (+€4.00)</option>
         </select>
 
-    <div class="user-fields" id="userFields">
+    <div class="user-fields" id="userFields"> <!-- Card dati consegna del cliente -->
         <strong>📍 Dati Consegna (Obbligatorio)</strong>
-        <input type="text" id="cognome" placeholder="Cognome Cliente">
-        <input type="text" id="indirizzo" placeholder="Indirizzo e Civico">
+        <input type="text" id="cognome" placeholder="Cognome Cliente"> <!-- Input cognome -->
+        <input type="text" id="indirizzo" placeholder="Indirizzo e Civico"> <!-- Input indirizzo -->
+        <div class="date-field-group">
+            <label for="dataPrenotazione">📅 Data preferita di prenotazione</label> <!-- Etichetta data prenotazione -->
+            <input type="date" id="dataPrenotazione"> <!-- Input calendario data prenotazione -->
+        </div>
     </div>
 
-    <div id="noResults" class="no-results">Nessun prodotto trovato.</div>
-    <div id="product-list"></div>
+    <div id="noResults" class="no-results">Nessun prodotto trovato.</div> <!-- Messaggio ricerca vuota -->
+    <div id="product-list"></div> <!-- Lista categorie/prodotti generata da JS -->
 </div>
 
-<div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Foto prodotto">
+<div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="Foto prodotto"> <!-- Visualizzazione foto ingrandita -->
     <button class="lightbox-close" aria-label="Chiudi" onclick="closeLightbox()">✕</button>
     <img id="lightbox-img" alt="">
     <div id="lightbox-cap"></div>
 </div>
 
-<div id="previewPane" class="preview-pane">
+<div id="previewPane" class="preview-pane"> <!-- Pannello anteprima carrello -->
     <h4>🛒 Carrello Attivo</h4>
     <div id="previewContent">Seleziona prodotti per vederli qui.</div>
     <button class="btn-clear" onclick="clearCart()">🗑 Svuota carrello</button>
 </div>
 
-<div class="footer">
+<div class="footer"> <!-- Barra fissa inferiore -->
     <div class="footer-btns">
-        <button class="btn-preview" onclick="togglePreview()">Anteprima</button>
-        <button class="btn-order" onclick="sendWhatsApp()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 8px;">
+        <button class="btn-preview" onclick="togglePreview()">Anteprima</button> <!-- Apre/chiude anteprima -->
+        <button class="btn-order" onclick="sendWhatsApp()"> <!-- Invia ordine su WhatsApp -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 8px;"> <!-- Icona SVG WhatsApp -->
                 <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.57 6.57 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.068-.315-.099-.447.099-.133.197-.513.646-.629.776-.117.13-.232.148-.43.05-.197-.099-.834-.308-1.587-.979-.586-.522-.982-1.168-1.097-1.365-.116-.197-.012-.304.086-.402.088-.088.197-.232.296-.347.099-.116.132-.197.197-.33.066-.133.033-.248-.016-.347-.05-.099-.447-1.077-.612-1.474-.161-.387-.325-.335-.447-.34-.117-.005-.251-.005-.385-.005-.133 0-.35.05-.533.248-.183.197-.7.684-.7 1.667 0 .984.717 1.937.817 2.069.101.133 1.41 2.154 3.417 3.023.477.207.85.33 1.14.423.477.152.911.13 1.254.079.384-.057 1.17-.478 1.335-.94.165-.462.165-.858.116-.94-.049-.082-.182-.133-.379-.232z"/>
             </svg>
-            Invia  € <span id="total-val">0.00</span>
+            Invia  € <span id="total-val">0.00</span> <!-- Totale dinamico -->
         </button>
     </div>
 </div>
 
-<div id="xmasBanner" class="xmas-overlay" role="dialog" aria-modal="true" aria-labelledby="xmasTitle" onclick="if(event.target===this)closeXmasBanner()">
+<div id="xmasBanner" class="xmas-overlay" role="dialog" aria-modal="true" aria-labelledby="xmasTitle" onclick="if(event.target===this)closeXmasBanner()"> <!-- Banner iniziale Cartellone di Natale -->
     <div class="xmas-card">
         <button class="xmas-close" aria-label="Chiudi" onclick="closeXmasBanner()">✕</button>
         <div class="xmas-emoji" aria-hidden="true"></div>
@@ -254,10 +261,10 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
     </div>
 </div>
 
-<script>
-const MY_NUMBER = "393803497603";
+<script> // Inizio codice JavaScript
+const MY_NUMBER = "393803497603"; // Numero WhatsApp del destinatario
 
-const PRODUCTS = {
+const PRODUCTS = { // Catalogo prodotti suddiviso per categoria (n = nome, p = prezzo, img = immagine)
     "Acqua in plastica": [
      {n: "Lete 1,5lt", p: 2.30, img: "https://d2j6dbq0eux0bg.cloudfront.net/images/77957781/3246503709.jpg"},
      {n: "FrizzOn 1,5lt", p: 2.30, img: "https://www.hellocasa.net/img/3647.jpg"},
@@ -483,7 +490,7 @@ const PRODUCTS = {
     ]
 };
 
-function render() {
+function render() { // Costruisce in HTML tutte le categorie e i prodotti
     let html = "";
     let catIdx = 0;
     for (let category in PRODUCTS) {
@@ -497,7 +504,7 @@ function render() {
                     <div class="cat-inner">
         `;
         PRODUCTS[category].forEach((p, pIdx) => {
-            const id = `prod-${catIdx}-${pIdx}`;
+            const id = `prod-${catIdx}-${pIdx}`; // ID univoco per ogni prodotto
             const imgSrc = p.img ? p.img : 'https://placehold.co/120x120/EEF1FF/2347FF?text=Bibita';
             const isTerminated = p.n.toUpperCase().includes("TERMINATA");
             
@@ -534,7 +541,7 @@ function isAfterCutoff() {
     return h >= CUTOFF_HOUR;
 }
 
-function updateLateNotice() {
+function updateLateNotice() { // Mostra o nasconde il banner di orario limite
     const el = document.getElementById('lateNotice');
     el.textContent = `🕔 Ordini dopo le ${CUTOFF_HOUR}:00: verranno elaborati il giorno successivo`;
     el.classList.toggle('show', isAfterCutoff());
@@ -545,7 +552,7 @@ function priceCents(i) { return Math.round(parseFloat(i.dataset.price) * 100); }
 function zoneCents() { return Math.round((parseFloat(document.getElementById('zona').value) || 0) * 100); }
 function fmt(c) { return (c / 100).toFixed(2); }
 
-function cartTotals() {
+function cartTotals() { // Calcola subtotale, numero pezzi e costo consegna
     let sub = 0, pieces = 0;
     document.querySelectorAll('#product-list input').forEach(i => {
         const q = parseInt(i.value, 10) || 0;
@@ -560,7 +567,7 @@ function norm(s) {
     return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
 }
 
-function filterProducts() {
+function filterProducts() { // Filtra prodotti e apre le categorie con risultati
     const query = norm(document.getElementById('productSearch').value);
     const categories = document.querySelectorAll('.cat-container');
     let foundAny = false;
@@ -579,7 +586,6 @@ function filterProducts() {
         if (foundInCategory) {
             foundAny = true;
             cat.style.display = 'block';
-            // apre la categoria e ricorda che l'ha aperta la ricerca
             if (query && !content.classList.contains('active')) {
                 content.classList.add('active');
                 header.classList.add('active');
@@ -589,7 +595,6 @@ function filterProducts() {
             cat.style.display = 'none';
         }
 
-        // campo svuotato: richiude solo le categorie aperte dalla ricerca
         if (!query && cat.dataset.searchOpen) {
             content.classList.remove('active');
             header.classList.remove('active');
@@ -599,25 +604,24 @@ function filterProducts() {
     document.getElementById('noResults').style.display = foundAny ? 'none' : 'block';
 }
 
-function toggleCat(header) {
+function toggleCat(header) { // Apre o chiude la categoria cliccata
     delete header.parentElement.dataset.searchOpen;
     header.classList.toggle('active');
     header.nextElementSibling.classList.toggle('active');
 }
 
-function changeQty(id, delta) {
+function changeQty(id, delta) { // Modifica quantità (+1 / -1) e attiva l'animazione pop
     const input = document.getElementById(id);
     if (!input || input.dataset.name.toUpperCase().includes("TERMINATA")) return; 
 
     let val = parseInt(input.value, 10) + delta;
     if (val >= 0) input.value = val;
 
-    // ANIMAZIONE POP IMMAGINE
     if (delta > 0) {
         const imgEl = document.getElementById(`img-${id}`);
         if (imgEl) {
             imgEl.classList.remove('img-pop');
-            void imgEl.offsetWidth; // Trigger reflow
+            void imgEl.offsetWidth;
             imgEl.classList.add('img-pop');
             setTimeout(() => {
                 imgEl.classList.remove('img-pop');
@@ -629,13 +633,13 @@ function changeQty(id, delta) {
     if (document.getElementById('previewPane').style.display === 'block') updatePreview();
 }
 
-function togglePreview() {
+function togglePreview() { // Apre o chiude l'anteprima del carrello
     const pane = document.getElementById('previewPane');
     pane.style.display = pane.style.display === 'block' ? 'none' : 'block';
     updatePreview();
 }
 
-function updatePreview() {
+function updatePreview() { // Aggiorna il contenuto dell'anteprima carrello
     let html = "";
     document.querySelectorAll('#product-list input').forEach(i => {
         const q = parseInt(i.value, 10) || 0;
@@ -677,17 +681,17 @@ function refreshSelection() {
     });
 }
 
-function updateTotal() {
+function updateTotal() { // Aggiorna il totale visualizzato sul pulsante di invio
     const t = cartTotals();
     document.getElementById('total-val').innerText = fmt(t.sub + t.deliv);
     refreshSelection();
 }
 
-function showUserFields() {
+function showUserFields() { // Mostra la card dati consegna quando è selezionata una zona
     if (document.getElementById('zona').selectedIndex > 0) document.getElementById('userFields').classList.add('show');
 }
 
-function clearCart() {
+function clearCart() { // Azzera tutte le quantità nel carrello
     if (!confirm("Svuotare il carrello?")) return;
     document.querySelectorAll('#product-list input').forEach(i => i.value = 0);
     updateTotal();
@@ -695,7 +699,7 @@ function clearCart() {
 }
 
 // ---- Foto a schermo intero
-function openLightbox(img) {
+function openLightbox(img) { // Apre l'immagine a schermo intero
     document.getElementById('lightbox-img').src = img.src;
     document.getElementById('lightbox-img').alt = img.alt;
     document.getElementById('lightbox-cap').textContent = img.alt;
@@ -703,22 +707,36 @@ function openLightbox(img) {
     document.body.style.overflow = 'hidden';
 }
 
-function closeLightbox() {
+function closeLightbox() { // Chiude il lightbox
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-function sendWhatsApp() {
+function formatWeekdayDate(isoDate) { // Converte "AAAA-MM-GG" in es. "venerdì 20 novembre"
+    const [yyyy, mm, dd] = isoDate.split('-').map(Number);
+    const d = new Date(Date.UTC(yyyy, mm - 1, dd, 12, 0, 0)); // Usa mezzogiorno UTC per evitare cambi di giorno
+    return new Intl.DateTimeFormat('it-IT', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        timeZone: 'Europe/Rome'
+    }).format(d);
+}
+
+function sendWhatsApp() { // Controlla i campi, formatta la data e apre WhatsApp con il riepilogo
     const cog = document.getElementById('cognome').value.trim();
     const ind = document.getElementById('indirizzo').value.trim();
+    const dataPren = document.getElementById('dataPrenotazione').value;
     const zonaTest = document.getElementById('zona');
     if (zonaTest.selectedIndex === 0) {
         zonaTest.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return alert("Scegli la zona di consegna!");
     }
-    if (!cog || !ind) return alert("Inserisci *Cognome* e *Indirizzo*");
+    if (!cog || !ind || !dataPren) return alert("Inserisci Cognome, Indirizzo e Data preferita di prenotazione!");
+
+    const dataFormattata = formatWeekdayDate(dataPren); // Es.: "venerdì 20 novembre"
 
     const lines = [];
     let sub = 0;
@@ -739,7 +757,6 @@ function sendWhatsApp() {
     const deliv = zoneCents();
     const zn = zonaTest.options[zonaTest.selectedIndex].getAttribute('data-zn');
     const bar = '━━━━━━━━━━━━━━━━━━━━━━━━━';
-    const when = new Intl.DateTimeFormat('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome' }).format(new Date());
     const order = [
         '*NUOVO ORDINE — BIBITESHOP*',
         bar,
@@ -747,6 +764,7 @@ function sendWhatsApp() {
         `👤 *Cliente:* ${cog}`,
         `📍 *Indirizzo:* ${ind}`,
         `🚚 *Zona:* ${zn}`,
+        `📅 *Data prenotazione:* ${dataFormattata}`,
         bar,
         ...lines,
         bar,
@@ -760,12 +778,21 @@ function sendWhatsApp() {
     window.open(`https://wa.me/${MY_NUMBER}?text=${encodeURIComponent(order)}`, '_blank');
 }
 
-render();
-try { localStorage.removeItem('bibiteshop_cart_v1'); } catch (e) {} // cancella i dati salvati in precedenza
+render(); // Genera i prodotti all'avvio
+try { localStorage.removeItem('bibiteshop_cart_v1'); } catch (e) {}
 updateTotal();
 showUserFields();
 updateLateNotice();
 setInterval(updateLateNotice, 60000);
+
+// Imposta la data minima prenotabile a oggi (ora di Roma)
+(function initMinDate() {
+    const dateInput = document.getElementById('dataPrenotazione');
+    if (dateInput) {
+        const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
+        dateInput.min = today;
+    }
+})();
 
 // Banner d'apertura: Numero di Natale (si mostra fino al giorno dell'estrazione, una volta per visita)
 const XMAS_DRAW_END = new Date('2026-12-22T23:59:59');
@@ -790,6 +817,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeXmasBan
     try { seen = sessionStorage.getItem('xmas_banner_seen') === '1'; } catch (e) {}
     if (!seen && new Date() <= XMAS_DRAW_END) openXmasBanner();
 })();
-</script>
-</body>
-</html>
+</script> <!-- Fine codice JavaScript -->
+</body> <!-- Fine corpo della pagina -->
+</html> <!-- Fine documento HTML -->
