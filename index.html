@@ -186,7 +186,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
             <div class="header-title"> <span class="badge-live">Bibite a Domicilio Online</span></div> <!-- Titolo con pallino verde -->
         </div>
         <div class="search-container">
-            <input type="text" id="productSearch" placeholder="🔍 Cerca..." oninput="filterProducts()"> <!-- Filtra i prodotti mentre scrivi -->
+            <input type="text" id="productSearch" placeholder="Cerca..." oninput="filterProducts()"> <!-- Filtra i prodotti mentre scrivi -->
         </div>
     </div>
 </div>
@@ -208,11 +208,11 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
         </select>
 
     <div class="user-fields" id="userFields"> <!-- Card dati consegna del cliente -->
-        <strong>📍 Dati Consegna (Obbligatorio)</strong>
+        <strong> Dati Consegna (Obbligatorio)</strong>
         <input type="text" id="cognome" placeholder="Cognome Cliente"> <!-- Input cognome -->
         <input type="text" id="indirizzo" placeholder="Indirizzo e Civico"> <!-- Input indirizzo -->
         <div class="date-field-group">
-            <label for="dataPrenotazione">📅 Data preferita di prenotazione</label> <!-- Etichetta data prenotazione -->
+            <label for="dataPrenotazione"> Data preferita di prenotazione</label> <!-- Etichetta data prenotazione -->
             <input type="date" id="dataPrenotazione"> <!-- Input calendario data prenotazione -->
         </div>
     </div>
@@ -230,7 +230,7 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 <div id="previewPane" class="preview-pane"> <!-- Pannello anteprima carrello -->
     <h4>🛒 Carrello Attivo</h4>
     <div id="previewContent">Seleziona prodotti per vederli qui.</div>
-    <button class="btn-clear" onclick="clearCart()">🗑 Svuota carrello</button>
+    <button class="btn-clear" onclick="clearCart()"> Svuota carrello</button>
 </div>
 
 <div class="footer"> <!-- Barra fissa inferiore -->
@@ -543,7 +543,7 @@ function isAfterCutoff() {
 
 function updateLateNotice() { // Mostra o nasconde il banner di orario limite
     const el = document.getElementById('lateNotice');
-    el.textContent = `🕔 Ordini dopo le ${CUTOFF_HOUR}:00: verranno elaborati il giorno successivo`;
+    el.textContent = `Ordini dopo le ${CUTOFF_HOUR}:00: verranno elaborati il giorno successivo`;
     el.classList.toggle('show', isAfterCutoff());
 }
 
@@ -654,7 +654,7 @@ function updatePreview() { // Aggiorna il contenuto dell'anteprima carrello
     const t = cartTotals();
     html += `<hr class="preview-sep"><div class="preview-item"><span>Spesa Spedizione</span><strong>€${fmt(t.deliv)}</strong></div>`;
     html += `<div class="preview-item preview-total"><strong>TOTALE COMPLESSIVO</strong><strong>€${fmt(t.sub + t.deliv)}</strong></div>`;
-    if (t.pieces < MIN_ITEMS) html += `<div class="preview-item preview-warn">⚠️ Ordine minimo ${MIN_ITEMS} prodotti: ne mancano ${MIN_ITEMS - t.pieces}</div>`;
+    if (t.pieces < MIN_ITEMS) html += `<div class="preview-item preview-warn">Ordine minimo ${MIN_ITEMS} prodotti: ne mancano ${MIN_ITEMS - t.pieces}</div>`;
     document.getElementById('previewContent').innerHTML = html;
 }
 
@@ -761,17 +761,17 @@ function sendWhatsApp() { // Controlla i campi, formatta la data e apre WhatsApp
         '*NUOVO ORDINE — BIBITESHOP*',
         bar,
         ...(late ? [`🕔 *Dopo le ${CUTOFF_HOUR}:00 — da elaborare domani*`, ''] : []),
-        `👤 *Cliente:* ${cog}`,
-        `📍 *Indirizzo:* ${ind}`,
-        `🚚 *Zona:* ${zn}`,
-        `📅 *Data prenotazione:* ${dataFormattata}`,
+        ` *Cliente:* ${cog}`,
+        ` *Indirizzo:* ${ind}`,
+        ` *Zona:* ${zn}`,
+        ` *Data prenotazione:* ${dataFormattata}`,
         bar,
         ...lines,
         bar,
-        `🧾 Prodotti: €${fmt(sub)}`,
-        `🚛  Consegna: €${fmt(deliv)}`,
+        ` Prodotti: €${fmt(sub)}`,
+        ` Consegna: €${fmt(deliv)}`,
         bar,
-        `💰 *TOTALE DA PAGARE: € ${fmt(sub + deliv)}*`,
+        ` *TOTALE DA PAGARE: € ${fmt(sub + deliv)}*`,
         
     ].join('\n');
 
