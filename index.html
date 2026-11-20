@@ -47,13 +47,13 @@ button:focus-visible,.cat-header:focus-visible{outline:3px solid var(--cobalt);o
 .btn-hide-order{padding:12px 16px;border:0;border-radius:14px;background:var(--tint);color:var(--ink);font:700 .95rem var(--font-body);cursor:pointer}
 
 /* Dati consegna (nascosti finché non si attiva dopo l'ordine) */
-.user-fields{display:none;grid-template-columns:1fr;gap:12px;padding:16px;margin-top:12px;background:var(--paper);border-radius:18px}
+.user-fields{display:none;grid-template-columns:1fr;gap:12px;padding:16px;margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:18px}
 .user-fields strong{grid-column:1/-1;display:block;font:800 1.1rem/1.2 var(--font-display);letter-spacing:-.01em}
-.user-fields input,#zona{width:100%;padding:14px 16px;border:2px solid transparent;border-radius:14px;background-color:var(--tint);color:var(--ink);font:500 1rem var(--font-body);outline:none;transition:border-color .2s,background-color .2s,box-shadow .2s}
+.user-fields input,#zona{width:100%;padding:14px 16px;border:2px solid var(--line);border-radius:14px;background-color:#fff;color:var(--ink);font:500 1rem var(--font-body);outline:none;transition:border-color .2s,background-color .2s,box-shadow .2s}
 .user-fields input::placeholder{color:#6A719B}
-.date-field-group{grid-column:1/-1;display:flex;flex-direction:column;gap:6px}
+.date-field-group{grid-column:1/-1;display:flex;flex-direction:column;gap:6px;background:#fff}
 .date-field-group label{font:700 .88rem/1.2 var(--font-body);color:var(--muted);padding-left:4px}
-.user-fields input[type="date"]{min-height:50px;cursor:pointer}
+.user-fields input[type="date"]{min-height:50px;cursor:pointer;background-color:#fff}
 #zona{appearance:none;-webkit-appearance:none;padding-right:44px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1 1.5l6 6 6-6' stroke='%232347FF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-color:#fff;border:2px solid var(--line);font-weight:700}
 #zona option{background:#fff;color:var(--ink)}
 .user-fields.show{display:grid;animation:fieldsIn .45s cubic-bezier(.16,1,.3,1)}
